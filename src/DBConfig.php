@@ -10,7 +10,8 @@
             $Env = new Dotenv();
             $Env->load("../.env");
             if (is_null(self::$connection)) {
-                self::$connection = mysqli_connect($_ENV['DB_HOST'],$_ENV['DB_USERNAME'],$_ENV['DB_PASSWORD'],$_ENV['DB_NAME']);
+                $PORT = (empty($_ENV['DB_PORT']) && (int)$_ENV['DB_PORT'] !== 3306) ? $_ENV['DB_PORT']: 3306;
+                self::$connection = mysqli_connect($_ENV['DB_HOST'],$_ENV['DB_USERNAME'],$_ENV['DB_PASSWORD'],$_ENV['DB_NAME'],$PORT);
             }
             return (!self::$connection) ? ["not connected"] : self::$connection;
         }
