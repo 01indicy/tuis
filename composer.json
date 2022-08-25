@@ -1,0 +1,22 @@
+{
+    "name": "indiciez/tuis",
+    "description": "php backend library",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Indiciez\\Tuis\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "indiciez",
+            "email": "justinmajura@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "ext-mysqli": "*",
+        "symfony/dotenv": "^6.1"
+    }
+}
